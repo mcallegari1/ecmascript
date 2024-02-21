@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+
+<script>
+
+    let resposta = {};
+
+    let promise = new Promise((resolve, reject) => {
+
+        
+        setTimeout(() => {
+
+            try {
+
+                // simulando http request
+                let erro = false;
+                // erro = true;
+                if (erro) {
+
+                    resposta = {
+                        codigo: '404',
+                        mensagem: 'Erro'
+                    }; 
+
+                    reject(resposta);
+                } else {
+
+                    resposta = {
+                        codigo: '200',
+                        id: 1,
+                        nome: 'Teste'
+                    };
+
+                    resolve(resposta);
+                }
+
+            } catch (e) {
+                reject(e);
+            }
+        }, 3000);
+    
+    }).then(response => {
+        console.log(response);
+        if (response.id != undefined) {
+            return response.id;
+        }
+    }).then(response => {
+        console.log(response);
+    }).catch(error => {
+        console.log(error);
+    });
+
+
+</script>
+<body>
+    
+</body>
+</html>
