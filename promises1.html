@@ -10,36 +10,7 @@
 <body>
 
     <script>
-
-        let resposta = {};
-
-        let promise = new Promise((resolve, reject) => {
-
-            
-            try {
-
-                setTimeout(() => {
-                    resposta = {dados: { msg: 'Teste'}};
-                    resolve('Sucesso');
-                    
-                    console.log(promise);
-                    console.log(resposta);
-                }, 3000);
-
-            } catch (e) {
-
-                setTimeout(() => {
-                    reject(e);
-                }, 3000);
-
-            }
-        });
-
-        console.log(promise);
-        console.log(resposta);
-
-
-
+        promises1();
     </script>
     
     
