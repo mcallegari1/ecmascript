@@ -91,7 +91,7 @@ function promises2()
 }
 
 function fnWeakMap() {
-    
+
     obj1 = {
         nome: 'Kyle Walker',
         brand: 'Real Skateboards'
@@ -112,5 +112,19 @@ function fnWeakMap() {
     obj2 = null;
 
     console.log(objetos)
+}
+
+function arrayInclude()
+{
+
+    let arr = ['banana', 'maça', 'uva'];
+
+    // find retorna o valor encontrado ou undefined
+    let retorno = arr.find(item => item == 'maça');
+    console.log(retorno);
+
+    // includes verifica se existe retorando true ou false, mais pratico como um isset em php
+    let retorno2 = arr.includes('maça');
+    console.log(retorno2);
 }
 
