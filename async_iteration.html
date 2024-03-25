@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+    <script>
+        
+        let processos = [1,2,3,4,5];
+
+        // Utilizando await podemos fazer com que cada iteração do loop espere a resolução da promise antes de ir para o próximo indice
+        let iteracaoAssincrona = async () => {
+            for (let p of processos) {
+
+                await new Promise((resolve, reject) => {
+
+                    setTimeout(() => {
+
+                        console.log('Processamento assíncrono');
+                        resolve();
+                    }, 2000)
+                })
+
+                console.log(p);
+            }
+        }
+
+        iteracaoAssincrona();
+    </script>
+
+    
+</body>
+</html>
